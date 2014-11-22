@@ -1,0 +1,93 @@
+Remove team pallette circle highlights
+F11 -> scroll down -> click teamplatter -> F11
+
+Help to new AI devs
+=====================================================
+[Enter] to chat
+/tooltip shows tooltip in bottom corner
+
+List chat commands: [Enter] / [tab]
+/commandhelp <commandName>   # shows command description
+
+Resolution and fullscreen setting are in .springrc (check this folder for an example)
+Time delay, mod, and AIs are in the script.txt (check this folder for the one in use)
+    default is in ~/.spring/script.txt, mine is in ${ljd}/
+
+Use ./spring $ljd/script.txt to test agent--much faster
+Use options in script.txt to pass info/varibles into agent
+
+~/.spring/LuaUI/Config/BA.lua   # has BA UI settings, delete to reset
+
+
+Replay:
+spring replayName.sdf
+spring ~/.spring/demos/replayName.sdf
+
+~/.spring/uikeys.txt   # gives default keybindings; can unbind and bind at will
+
+Screenshots:  f12 to take
+found in ~/.spring/demos/screenshots
+ctr-F1 fps mode
+arrow keys to move around
+F5 disables GUI
+
+Upgrading/installing
+=========================================================================
+# Backup orginal source
+cd $ljd
+./backup
+For either, must update .zshrc (verSpring=88 -> verSpring=Dev)
+    - change in ~ and then copy to $configFiles
+If you change the spring engine source path (example: upgrade to 88.0):
+    - Must change $source variable in Makefile
+If you change the spring binary install dir, must change 
+    - Must change $binDir=/home/ljd/spring[Ver] in Makefile
+    - update build.sh and headless.sh binPath=85 -> binPath=88
+
+for new computer:
+# Copy backup source into new binary dir
+# attach hardrive
+cd ~/.spring/AI/Skirmish/ljd
+cp -r $ljdback .
+
+Q's
+--------------------------------------------
+Use reload?
+Will spring-headless save time in testing?
+(spring-headless must be compiled via cmake)
+Scripted game-speed speed-up?  Above x3.0?
+Remove reckage/features from game? (no blocked paths :))
+Get cursor position back?
+Use pwd in Makefile to auto-get the current working dir (no?)
+Put config and python files in ~/.spring/AI/ljd since .spring is the cwd
+    -> python in config dir?
+            -> config dir is easy (in cwd; under ~/.spring)
+            -> no need to put 2x option in every script.txt
+
+
+==================================
+notes for hoijoi abma
+---------------------------------
+SGiveMeNewUnitCheatCommand
+comment // returns its unit ID in ret_newUnitId
+Solved // shouldn't int ret_newUnitId be int *ret_newUnitId
+No!, ret_newUnitId is inside the struct!, struct is written field is 
+written over!
+
+float   UnitDef_getMaxSlope(int skirmishAIId, int unitDefId);
+returns 0.0 for buildings?
+
+# GiveGroupOrder not implemented!!!!  >:(
+int CAICallback::GiveGroupOrder(int groupId, Command* c)
+{
+        return 0;
+}
+
+COMMAND_UNIT_WAIT_TIME doesn't work at all :(
+
+BA
+// crash on air units and buildings
+int xSize = clbs[sid]->UnitDef_MoveData_getXSize(sid, defId);
+int zSize = clbs[sid]->UnitDef_MoveData_getZSize(sid, defId);
+
+Can't attack mobile enemy units outside of LOS?
