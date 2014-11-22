@@ -1,0 +1,4 @@
+10
+lrg
+p1 Turtle on
+p2 Exp on

@@ -1,0 +1,7 @@
+armsolar    :   econBuilding    :5:5
+armmex      :   econBuilding    :3:3
+armllt      :   defenseBuilding :2:2
+armrl       :   defenseBuilding :3:3
+armlab      :   factory         :6:6
+armvp       :   factory         :8:6
+armap       :   factory         :8:6
