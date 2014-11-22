@@ -12,7 +12,7 @@ The thesis is available on
 The Defense Technical Information Center (DTIC)
 <http://www.dtic.mil/dtic/tr/fulltext/u2/a563243.pdf>
 or
-<www.dtic.mil/cgi-bin/GetTRDoc?AD=ADA563243>
+<http://www.dtic.mil/cgi-bin/GetTRDoc?AD=ADA563243>
 
 ### Folder structure ###
 - classifier:  code to run the classifiers
