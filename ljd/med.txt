@@ -1,0 +1,117 @@
+[GAME]
+{
+	HostIP=;
+	HostPort=8452;
+	IsHost=1;
+	MyPlayerName=Player;
+    GameStartDelay=0;
+
+	ModHash=3844647151;
+	Mapname=Eye_Of_Horus_v2;
+	GameType=Balanced Annihilation V7.68;
+
+	startpostype=3;
+	[mapoptions]
+	{
+	}
+	[modoptions]
+	{
+		relayhoststartpostype=3;
+		disablemapdamage=0;
+		fixedallies=0;
+		ghostedbuildings=1;
+		limitdgun=0;
+		mo_allowfactionchange=1;
+		mo_combomb_full_damage=0;
+		mo_comgate=0;
+		mo_coop=1;
+		mo_enemywrecks=0;
+		mo_greenfields=0;
+		mo_noowner=0;
+		mo_noshare=1;
+		mo_nowrecks=1;      // Units don't get stuck in wrecks
+        DisableMapDamage=1; // Map will not deform on explosions
+		mo_preventdraw=0;
+		mo_progmines=0;
+		shareddynamicalliancevictory=0;
+		maxspeed=500;
+		maxunits=500;
+		minspeed=500;
+		mo_armageddontime=0;
+		startenergy=1000;
+		startmetal=1000;
+		deathmode=com;
+		mo_storageowner=team;
+		mo_transportenemy=all;
+		teamdeathmode=allyzerounits;
+	}
+	NumRestrictions=0;
+	[RESTRICT]
+	{
+	}
+
+	NumPlayers=1;
+	NumUsers=3;
+
+	[PLAYER2]
+	{
+		Name=Player;
+		CountryCode=;
+		Spectator=1;
+		Rank=0;
+		IsFromDemo=0;
+		Team=1;
+	}
+	[AI0]
+	{
+		Name=Bot1;
+		ShortName=ljd;
+		Team=0;
+		IsFromDemo=0;
+		Host=2;
+		[Options]
+		{
+		}
+	}
+	[AI1]
+	{
+		Name=Bot2;
+		ShortName=ljd;
+		Team=1;
+		IsFromDemo=0;
+		Host=2;
+		[Options]
+		{
+		}
+	}
+
+	[TEAM0]
+	{
+		TeamLeader=2;
+		StartPosX=300;
+		StartPosZ=300;
+		AllyTeam=0;
+		RGBColor=0.976471 1 0;
+		Side=ARM;
+		Handicap=0;
+	}
+	[TEAM1]
+	{
+		TeamLeader=2;
+		StartPosX=5844;
+		StartPosZ=6868;
+		AllyTeam=1;
+		RGBColor=0.509804 0.498039 1;
+		Side=ARM;
+		Handicap=0;
+	}
+
+	[ALLYTEAM0]
+	{
+		NumAllies=0;
+	}
+	[ALLYTEAM1]
+	{
+		NumAllies=0;
+	}
+}
